@@ -1,9 +1,14 @@
 package com.example.lab_32;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.PopupWindow;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class MainActivity extends AppCompatActivity {
     private  static  final  double  P  =  4.0 ;
@@ -17,9 +22,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void onButtonClick(View v) {
         final double speedOfLearning = Double.parseDouble(((Spinner) findViewById(R.id.spinner)).getSelectedItem().toString());
-        final double timeOfDeadline = Double.parseDouble(((Spinner) findViewById(R.id.spinner2)).getSelectedItem().toString());
         final int numberOfIterations = Integer.parseInt(((Spinner) findViewById(R.id.spinner3)).getSelectedItem().toString());
-
+        @Override
+        public void onButtonClick(View v){
+            final double timeOfDeadline;
+            Button button2 = (Button) findViewById(R.id.button2);
+            button2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public  void  onClick ( View  view ) {
+                    Popup popup =  new  Popup();
+                    popup.showPopupWindow(view, timeOfDeadline);
+                }
+            }
+        }
         double w1 = 0;
         double w2 = 0;
         double y;
@@ -62,5 +77,5 @@ public class MainActivity extends AppCompatActivity {
                 && P < points[1][0] * w1 + points[1][1] * w2
                 && P > points[2][0] * w1 + points[2][1] * w2
                 && P > points[3][0] * w1 + points[3][1] * w2;
+         }
     }
-}

@@ -63,6 +63,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginLeft="16dp"/>
 
+    <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="134dp"
+            android:layout_marginTop="68dp"
+            android:layout_marginEnd="135dp"
+            android:layout_marginBottom="80dp"
+            android:background="#E54135"
+            android:text="@string/button2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
     <Spinner
             android:id="@+id/spinner3"
             android:layout_width="120dp"
@@ -70,16 +85,6 @@
             android:layout_marginStart="232dp"
             android:layout_marginTop="304dp"
             android:entries="@array/number_of_iterations"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginLeft="232dp"/>
-
-    <Spinner
-            android:id="@+id/spinner2"
-            android:layout_width="120dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="232dp"
-            android:layout_marginTop="256dp"
-            android:entries="@array/deadline_time"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginLeft="232dp"/>
 
